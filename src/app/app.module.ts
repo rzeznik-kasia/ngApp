@@ -5,12 +5,16 @@ import { AppComponent } from './app.component';
 import { ItemsComponent } from './components/items/items.component';
 import { RegisterFormComponent } from './components/register-form/register-form.component';
 import {RouterModule} from "@angular/router";
+import { SearchComponent } from './components/search/search.component';
+import { DatagridComponent } from './components/datagrid/datagrid.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ItemsComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    SearchComponent,
+    DatagridComponent
   ],
   imports: [
     BrowserModule,

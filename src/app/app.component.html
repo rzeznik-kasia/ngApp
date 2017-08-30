@@ -1,7 +1,11 @@
 <div class="container-fluid">
-  <nav class="nav nav-tabs">
-    <a class="nav-itme nav-link" routerLink="items">items</a>
-    <a class="nav-itme nav-link active" routerLink="register-form">register form</a> <!--nic nie zwiazanego z angularem-->
+  <nav class="nav nav-tabs mt-2 mb-2"> <!--margin top i bottom-->
+    <a class="nav-itme nav-link"
+       routerLinkActive="acitve"
+       routerLink="items">items</a>
+    <a class="nav-itme nav-link"
+       routerLinkActive="acitve"
+       routerLink="register-form">register form</a> <!--nic nie zwiazanego z angularem-->
   </nav>
 
   <router-outlet></router-outlet>
