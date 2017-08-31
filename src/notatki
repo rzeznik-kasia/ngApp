@@ -8,3 +8,6 @@ routing -> do jakiegos taba ladujemy jakis komponent
 
 ...
 ng g s services/items
+
+..
+ng g p pipes/map-to-iterable

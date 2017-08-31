@@ -3,6 +3,7 @@ import {CRUDServiceInterface} from "./crud.service.interface";
 import {Observable} from "rxjs/Observable";
 import {Http} from "@angular/http";
 import {Settings} from "../utils/ssettings";
+import "rxjs/add/operator/map";
 
 @Injectable()
 export class ItemsService implements CRUDServiceInterface {
@@ -12,7 +13,11 @@ export class ItemsService implements CRUDServiceInterface {
 //pod konstruktorem ctrl i + ctrl a i implementujemy
 
   fetch(filters?: any): Observable<any> {
-    return this.http.get(Settings.ITEMS_END_POINT);
+    return this.http
+      .get(Settings.ITEMS_END_POINT)
+      .map((response)=> { // wzorzec obserwer, rejestrujesz funkcje i jest wolana keidy trzeba, mozna mapowac obiekty -> cyzt. reactivex
+        return response.json().data;
+      });
   }
 
   add(item): Observable<any> {

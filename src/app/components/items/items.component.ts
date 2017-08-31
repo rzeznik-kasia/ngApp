@@ -11,18 +11,17 @@ import {ItemsService} from "../../services/items.service";
 })
 export class ItemsComponent implements OnInit {
 
-  items: any[] = [1, 2, 4]; //komponent nie powinien miec zaleznosci
+  items: any[]; //komponent nie powinien miec zaleznosci
 
   constructor(private itemsService: ItemsService) {
-    //tu nie
   }
 
   //przy uzyciu http widok widzi z jakiego adresu przychodza dane, zle jak tak jest
 
   ngOnInit() { //wlasciwa funkcja do pracy z komponentem
     this.itemsService.fetch().
-      subscribe((response)=> {
-      console.log(response);
+      subscribe((data)=> {
+       this.items = data;
       })
   }
 

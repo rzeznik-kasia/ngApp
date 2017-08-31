@@ -8,6 +8,7 @@ import {RouterModule} from "@angular/router";
 import { SearchComponent } from './components/search/search.component';
 import { DatagridComponent } from './components/datagrid/datagrid.component';
 import {HttpModule} from "@angular/http";
+import { MapToIterablePipe } from './pipes/map-to-iterable.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {HttpModule} from "@angular/http";
     ItemsComponent,
     RegisterFormComponent,
     SearchComponent,
-    DatagridComponent
+    DatagridComponent,
+    MapToIterablePipe
   ],
   imports: [
     BrowserModule,
