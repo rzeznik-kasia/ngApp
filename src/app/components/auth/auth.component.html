@@ -1,16 +1,20 @@
 form: {{loginForm.value|json}}
 <br>
 valid: {{loginForm.valid}}
-<form class="form-inline" #loginForm="ngForm"> <!--a teraz jak sie to robi angularowo, walidacja, nie beda dane znikac-->
+<!--albo submin to forma albo click do buttona dla zdarenia-->
+<form class="form-inline"
+      #loginForm="ngForm"
+      (submit)="sendForm(loginForm)"> <!--a teraz jak sie to robi angularowo, walidacja, nie beda dane znikac-->
+  <!--zamiast przekazywac parametr mozemy zrobic viewChild-->
   <input type="text"
          required
          class="form-control"
-         ngModel
-         name="login">
+         [ngModel]="'admin'"
+         name="login"> <!--ngModel przechwytuje akcje i nie mozna uzyc value chyba ze uzyjemy ng model w tyrbie one way data binding-->
   <input type="password"
          required
          class="form-control"
-         ngModel
+         [ngModel]="'admin'"
          name="password"> <!--ng model spowoduje ze zbinduja sie dane z formularza-->
-  <button class="btn-primary">log in</button>
+  <button class="btn-primary" [disabled]="!loginForm.valid">log in</button>
 </form>

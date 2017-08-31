@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {AuthService} from "../../services/auth.service";
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-auth',
@@ -8,11 +9,20 @@ import {AuthService} from "../../services/auth.service";
 })
 export class AuthComponent implements OnInit {
 
+  @ViewChild('loginForm') form:NgForm; /*bedzie po zmienna form dostepny, szukamy cos w templatce loginForm*/
   constructor(public authService: AuthService) {
 
   }
 
   ngOnInit() {
+  }
+
+  sendForm(loginForm) {
+   if(this.form.valid) {
+     console.log(this.form.value);
+  }
+  else {
+    console.warn('form invlaid');
   }
 
 }
