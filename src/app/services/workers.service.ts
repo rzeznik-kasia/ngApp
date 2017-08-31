@@ -10,7 +10,7 @@ export class WorkersService implements CRUDServiceInterface {
   constructor(private http:Http) { }
 
   fetch(): Observable<any> { /*filtrujemy po stronie klienta tu*/
-    return this.http.get(Settings.WORKERS_END_POINT); /*o tu*/
+    return this.http.get(Settings.WORKERS_END_POINT); /*o tu zmapowac .map*/
   }
 
   add(item): Observable<any> {
