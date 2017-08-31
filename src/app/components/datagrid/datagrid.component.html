@@ -14,7 +14,12 @@
             <img [src]="item[key]" width="50">
           </div>
           <div *ngSwitchCase="'price'">
-            <input type="text" value={{item[key]}}>
+            <input class="formControl" type="text" value="{{item[key]}}">
+            <!--[value]="item[key]" anuglar 2-->
+            <!--value={{item[key]}} angular 1-->
+          </div>
+          <div *ngSwitchCase="'id'">
+
           </div>
           <div *ngSwitchDefault>
             {{item[key]}}
