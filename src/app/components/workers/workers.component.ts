@@ -18,10 +18,9 @@ export class WorkersComponent implements OnInit {
 
   ngOnInit() {
     this.workerService.fetch()
-      .subscribe((data) => {
-
+      .subscribe((resp) => {
       debugger;
-        this.workers = data;
+        this.workers = resp.json().data;
       })
   }
 
