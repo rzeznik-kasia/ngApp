@@ -18,7 +18,7 @@ export class AuthService implements AuthServiceInterface{
         return resp.json().ok;
       })// chcemy ze odo subsriba doszlo ok
       .subscribe((ok)=> {
-        console.log(ok);
+        this.access = ok;
       }); //jak nikt nie slucha ot on nie wyjdzie
     console.log(loginData);
   }
