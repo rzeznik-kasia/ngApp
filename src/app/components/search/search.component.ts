@@ -24,7 +24,7 @@ export class SearchComponent implements OnInit, AfterViewInit {
         itemsPerPAge:5, innymi slowy rozmija na wlasciwosci i dołącza. ...spread operator*/
 
         /*teraz robimy ze przy kazdym znaku idzie request do esrvera*/
-
+/*...value -> obiekt zostaje rozbity na wlasciwosci i zostaje dodany do obiektu, w fetchu mozna sobie debbugera postawic zeby to zobaczyc w item.services.ts*/
 
 
       });
