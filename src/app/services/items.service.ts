@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
 import {CRUDServiceInterface} from "./crud.service.interface";
 import {Observable} from "rxjs/Observable";
+import {Http} from "@angular/http";
+import {Settings} from "../utils/ssettings";
 
 @Injectable()
 export class ItemsService implements CRUDServiceInterface {
 
-  constructor() { }
+  constructor(private http:Http) {
+  }
 //pod konstruktorem ctrl i + ctrl a i implementujemy
 
   fetch(filters?: any): Observable<any> {
-    return null;
+    return this.http.get(Settings.ITEMS_END_POINT);
   }
 
   add(item): Observable<any> {
