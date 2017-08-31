@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-datagrid',
@@ -9,6 +9,7 @@ export class DatagridComponent implements OnInit {
 
   @Input() items: any[]; //mogloby byc any
   @Input() config: any[];
+  @Output() removeEvent: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 
@@ -16,7 +17,8 @@ export class DatagridComponent implements OnInit {
   }
 
   remove(id) {
-    console.log(id);
+    this.removeEvent.emit(id);
+    //console.log(id); //przenowimy loga do parenta
   }
 
 }
