@@ -18,11 +18,11 @@ export class AuthComponent implements OnInit {
   }
 
   sendForm(loginForm) {
-   if(this.form.valid) {
-     console.log(this.form.value);
+    if (this.form.valid) {
+      this.authService.logIn(this.form.value);
+    }
+    else {
+      console.warn('form invlaid');
+    }
   }
-  else {
-    console.warn('form invlaid');
-  }
-
 }
