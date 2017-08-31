@@ -12,9 +12,11 @@ import {BehaviorSubject} from "rxjs/BehaviorSubject";
 })
 export class ItemsComponent implements OnInit {
 
-  filters: BehaviorSubject<any> = new BehaviorSubject({id:1});
+  filters: BehaviorSubject<any> = new BehaviorSubject({
+    itemsPerPage: 5
+  });
 
-  items: any[]; //komponent nie powinien miec zaleznosci
+  items: any[]; //komponent nie powinien miec zaleznosci od danych
 
   constructor(private itemsService: ItemsService) {
     this.filters
