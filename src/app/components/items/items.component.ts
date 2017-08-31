@@ -23,11 +23,14 @@ export class ItemsComponent implements OnInit {
   }
 
   removeItem(id) {
-   this.itemsService
-     .remove(id)
-     .subscribe((resp)=> {
-       this.fetchItems();
-     })
+    if(confirm('are you sure?')) {
+      this.itemsService
+        .remove(id)
+        .subscribe((resp)=> {
+          this.fetchItems();
+        })
+    }
+
   }
 
   private fetchItems() {
