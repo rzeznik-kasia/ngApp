@@ -14,6 +14,7 @@ import {AuthService} from "./services/auth.service";
 import {FormsModule} from "@angular/forms";
 import {CORS} from "./utils/cors";
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { WorkersComponent } from './components/workers/workers.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     SearchComponent,
     DatagridComponent,
     MapToIterablePipe,
-    AuthComponent
+    AuthComponent,
+    WorkersComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     NgbModule.forRoot(),
     RouterModule.forRoot([
       {path: 'items', component: ItemsComponent},
-      {path: 'register-form', component: RegisterFormComponent}
+      {path: 'register-form', component: RegisterFormComponent},
+      {path: 'workers', component: WorkersComponent}
 
     ]),
     FormsModule
