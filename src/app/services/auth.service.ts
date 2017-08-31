@@ -24,5 +24,9 @@ export class AuthService implements AuthServiceInterface{
   }
 
   logOut(): void {
+    this.http.get(Settings.LOGOUT_END_POINT)
+      .subscribe((resp)=> {
+        this.access = false;
+      });
   }
 }

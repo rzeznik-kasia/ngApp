@@ -25,4 +25,8 @@ export class AuthComponent implements OnInit {
       console.warn('form invlaid');
     }
   }
+
+  logOut() {
+    this.authService.logOut();
+  }
 }

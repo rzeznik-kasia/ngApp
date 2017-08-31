@@ -1,6 +1,8 @@
 form: {{loginForm.value|json}}
 <br>
 valid: {{loginForm.valid}}
+<br>
+access: {{authService.access}} <!--jest bo mamy publiczny-->
 <!--albo submin to forma albo click do buttona dla zdarenia-->
 <form class="form-inline"
       #loginForm="ngForm"
@@ -18,4 +20,8 @@ valid: {{loginForm.valid}}
          name="password"> <!--ng model spowoduje ze zbinduja sie dane z formularza-->
   <button class="btn-primary" [disabled]="!loginForm.valid">log in</button>
 </form>
+<button class="btn btn-warning"
+        (click)="logOut()">
+  log out
+</button>
 
