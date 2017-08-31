@@ -8,6 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class DatagridComponent implements OnInit {
 
   @Input() items: any[]; //mogloby byc any
+  @Input() config: any[];
 
   constructor() { }
 

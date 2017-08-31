@@ -3,7 +3,9 @@
     <app-search></app-search>
   </div>
   <div class="col-sm-9">
-    <app-datagrid [items]="items"></app-datagrid>
+    <app-datagrid
+      [config]="['title', 'imgSrc', 'price']"
+      [items]="items"></app-datagrid>
 
   </div>
 </div>
