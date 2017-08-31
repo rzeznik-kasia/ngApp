@@ -1,5 +1,16 @@
-<form class="form-inline"> <!--action w angularze niepotrzebne-->
-  <input type="text" class="form-control">
-  <input type="password" class="form-control">
+form: {{loginForm.value|json}}
+<br>
+valid: {{loginForm.valid}}
+<form class="form-inline" #loginForm="ngForm"> <!--a teraz jak sie to robi angularowo, walidacja, nie beda dane znikac-->
+  <input type="text"
+         required
+         class="form-control"
+         ngModel
+         name="login">
+  <input type="password"
+         required
+         class="form-control"
+         ngModel
+         name="password"> <!--ng model spowoduje ze zbinduja sie dane z formularza-->
   <button class="btn-primary">log in</button>
 </form>

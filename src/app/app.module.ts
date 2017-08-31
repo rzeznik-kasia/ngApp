@@ -11,6 +11,7 @@ import {HttpModule} from "@angular/http";
 import { MapToIterablePipe } from './pipes/map-to-iterable.pipe';
 import { AuthComponent } from './components/auth/auth.component';
 import {AuthService} from "./services/auth.service";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {AuthService} from "./services/auth.service";
       {path: 'items', component: ItemsComponent},
       {path: 'register-form', component: RegisterFormComponent}
 
-    ])
+    ]),
+    FormsModule
   ],
   providers: [
     AuthService
