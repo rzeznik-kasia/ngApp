@@ -19,17 +19,21 @@ export class ItemsComponent implements OnInit {
   //przy uzyciu http widok widzi z jakiego adresu przychodza dane, zle jak tak jest
 
   ngOnInit() { //wlasciwa funkcja do pracy z komponentem
-    this.itemsService.fetch().
-      subscribe((data)=> {
-       this.items = data;
-      })
+    this.fetchItems();
   }
 
   removeItem(id) {
    this.itemsService
      .remove(id)
      .subscribe((resp)=> {
-       debugger;
+       this.fetchItems();
      })
+  }
+
+  private fetchItems() {
+    this.itemsService.fetch().
+    subscribe((data)=> {
+      this.items = data;
+    })
   }
 }
