@@ -25,4 +25,7 @@ export class ItemsComponent implements OnInit {
       })
   }
 
+  removeItem(id) {
+    console.log(id);
+  }
 }

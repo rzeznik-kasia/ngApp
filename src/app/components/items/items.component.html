@@ -5,7 +5,8 @@
   <div class="col-sm-9">
     <app-datagrid
       [config]="['title', 'imgSrc', 'price']"
+      (removeEvent)="removeItem($event)"
       [items]="items"></app-datagrid>
-
+<!--control spaca i wsakuje remove event-->
   </div>
 </div>
