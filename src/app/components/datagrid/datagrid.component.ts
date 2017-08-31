@@ -15,4 +15,8 @@ export class DatagridComponent implements OnInit {
   ngOnInit() {
   }
 
+  remove(id) {
+    console.log(id);
+  }
+
 }
