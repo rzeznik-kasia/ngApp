@@ -9,7 +9,17 @@
       </td>-->
 
       <td *ngFor="let key of item | mapToIterable">
-        {{item[key]}}
+        <div [ngSwitch]="key">
+          <div *ngSwitchCase="'imgSrc'">
+            <img [src]="item[key]" width="50">
+          </div>
+          <div *ngSwitchDefault>
+            {{item[key]}}
+          </div>
+
+        </div>
+
+        
       </td>
 
     </tr>
