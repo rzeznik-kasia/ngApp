@@ -7,9 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class DatagridComponent implements OnInit {
 
-  @Input() items: number[] = [
-    1, 2, 3, 4, 5
-  ];
+  @Input() items: any[]; //mogloby byc any
 
   constructor() { }
 

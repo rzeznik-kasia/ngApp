@@ -5,3 +5,6 @@ ng serve -8000
 
 ..
 routing -> do jakiegos taba ladujemy jakis komponent
+
+...
+ng g s services/items
