@@ -13,11 +13,17 @@ export class ItemsComponent implements OnInit {
 
   items: any[] = [1, 2, 4]; //komponent nie powinien miec zaleznosci
 
-  constructor(private itemsService: ItemsService) { }
+  constructor(private itemsService: ItemsService) {
+    //tu nie
+  }
 
   //przy uzyciu http widok widzi z jakiego adresu przychodza dane, zle jak tak jest
 
-  ngOnInit() {
+  ngOnInit() { //wlasciwa funkcja do pracy z komponentem
+    this.itemsService.fetch().
+      subscribe((response)=> {
+      console.log(response);
+      })
   }
 
 }

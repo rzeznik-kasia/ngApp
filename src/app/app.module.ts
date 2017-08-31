@@ -7,6 +7,7 @@ import { RegisterFormComponent } from './components/register-form/register-form.
 import {RouterModule} from "@angular/router";
 import { SearchComponent } from './components/search/search.component';
 import { DatagridComponent } from './components/datagrid/datagrid.component';
+import {HttpModule} from "@angular/http";
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { DatagridComponent } from './components/datagrid/datagrid.component';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     RouterModule.forRoot([
       {path: 'items', component: ItemsComponent},
       {path: 'register-form', component: RegisterFormComponent}
