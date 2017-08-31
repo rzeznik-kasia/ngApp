@@ -19,7 +19,7 @@ export class SearchComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.searchForm.valueChanges
       .subscribe((value)=> {
-        console.log(value); /* to jest sposob na pobranie danych z formularza*/
+        //console.log(value); /* to jest sposob na pobranie danych z formularza*/
         this.filters.next({...this.filters.getValue(), ...value}); /*zachowalismy stara wartosc. ...innymi slowy
         itemsPerPAge:5, innymi slowy rozmija na wlasciwosci i dołącza. ...spread operator*/
 
