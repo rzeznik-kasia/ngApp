@@ -26,6 +26,10 @@ export class ItemsComponent implements OnInit {
   }
 
   removeItem(id) {
-    console.log(id);
+   this.itemsService
+     .remove(id)
+     .subscribe((resp)=> {
+       debugger;
+     })
   }
 }

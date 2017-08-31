@@ -29,6 +29,7 @@ export class ItemsService implements CRUDServiceInterface {
   }
 
   remove(id): Observable<any> {
-    return null;
+    return this.http
+      .delete(Settings.ITEMS_END_POINT + "/" + id);
   }
 }
