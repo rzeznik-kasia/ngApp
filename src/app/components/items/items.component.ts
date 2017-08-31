@@ -11,9 +11,16 @@ import {ItemsService} from "../../services/items.service";
 })
 export class ItemsComponent implements OnInit {
 
+  /*FILTRY filters: BehaviourSubject<any> = new BehavoiurSubject({id:1});*/
+
   items: any[]; //komponent nie powinien miec zaleznosci
 
   constructor(private itemsService: ItemsService) {
+    /*FILTRY this.filters
+    .subscribe((data)=> {
+    console.log(data)
+    });
+    * filters.next({id:2})*/
   }
 
   //przy uzyciu http widok widzi z jakiego adresu przychodza dane, zle jak tak jest
