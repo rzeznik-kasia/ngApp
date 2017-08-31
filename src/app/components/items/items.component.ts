@@ -53,9 +53,11 @@ export class ItemsComponent implements OnInit {
 
   /*dlaczego requesty wysylane sa przez serwer, bo:*/
 /*filtry  sa reaktywne jak na nich wywolujesz nexta to wywola sie subcribe, to sei wykona fech items, pojdzie reaquest, filtry zostana przekazane*/
-  updateFilters(value) {
+  updateFilters(key, value) {
     console.log(value);
-    this.filters.next({...this.filters.getValue(), itemsPerPage: value});/*robije wlasciwosc i doda wartosc*/
+    this.filters.next({...this.filters.getValue(), [key]: value});/*robije wlasciwosc i doda wartosc*/
+/*ta funkja ma dostawac klucz i value, bo teraz dostaje value, iterms per page jest zahardkowowane*/
+/*to jest ecma6!!! eh, mozna podac tu obiekt albo dodawac funcje ale teraz jest ladnie*/
 
   }
 }

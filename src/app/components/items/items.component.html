@@ -3,23 +3,42 @@
     <app-search [filters]="filters" [controls]="['title', 'price']"></app-search>
   </div>
   <div class="col-sm-9">
-    <select (change)="updateFilters($event.target.value)">
-      <option class="form-control"
-        *ngFor="let opt of [2,5,10]">
-        {{opt}}
-      </option>
-    </select>
 
-    <!--jak to wylicza ile kafelkow? -> -->
+    <div class="row">
+      <div class="col-1">
+        <select
+          class="form-control"
+          [value]="filters.value.itemsPerPage"
+          (change)="updateFilters('itemsPerPage', $event.target.value)">
+          <option
+            *ngFor="let opt of [2,5,10]">
+            {{opt}}
+          </option>
+        </select>
+      </div>
 
-    iii: {{total/filters.getValue().itemsPerPage}}
-    <!--    <ngb-pagination
-      [collectionSize]="total"
-      [pageSize]="filters.value.itemsPerPage"
-      [maxSize]="50"
-      [rotate]="true"
-      [ellipses]="false"
-      [boundaryLinks]="true"></ngb-pagination>-->
+      <div class="col-2">
+        add
+      </div>
+
+      <div class="col-8">
+        <!--jak to wylicza ile kafelkow? -> -->
+<!--jak klikamy w paginacje chcemy zauktalizowac filtry updatefilters a fetch sie sam wykona-->
+        <!--iii: {{total/filters.getValue().itemsPerPage}}-->
+        <ngb-pagination
+          [collectionSize]="total"
+          [pageSize]="filters.value.itemsPerPage"
+          [maxSize]="50"
+          [rotate]="true"
+          (pageChange)="updateFilters('currentPage', $event)"
+          [ellipses]="false"
+          [boundaryLinks]="true"></ngb-pagination>
+      </div>
+    </div>
+
+
+
+
 
     <app-datagrid
       [config]="['title', 'imgSrc', 'price']"
