@@ -13,7 +13,10 @@ export class AuthService implements AuthServiceInterface{
   }
 
   logIn(loginData): void {
-    this.http.post(Settings.LOGIN_END_POINT, loginData);
+    this.http.post(Settings.LOGIN_END_POINT, loginData)
+      .subscribe((resp)=> {
+      console.log(resp);
+      }); //jak nikt nie slucha ot on nie wyjdzie
     console.log(loginData);
   }
 
