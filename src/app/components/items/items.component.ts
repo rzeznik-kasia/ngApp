@@ -21,7 +21,7 @@ export class ItemsComponent implements OnInit {
   constructor(private itemsService: ItemsService) {
     this.filters
       .subscribe((data)=> {
-        console.log(data)
+        this.fetchItems();
     });
   }
 
@@ -43,7 +43,7 @@ export class ItemsComponent implements OnInit {
   }
 
   private fetchItems() {
-    this.itemsService.fetch().
+    this.itemsService.fetch(this.filters.getValue()).
     subscribe((data)=> {
       this.items = data;
     })
