@@ -28,4 +28,8 @@ export class WorkersComponent implements OnInit {
       })
   }
 
+  removeWorker(id) {
+        console.log(id);
+      }
+
 }

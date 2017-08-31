@@ -6,7 +6,10 @@
     </app-search>
   </div>
   <div class="col-8">
-    <app-datagrid [config]="['name']" [items]="workers"> <!--jak nie ma kolumn to trzeba dolozyc konfiga-->
+    <app-datagrid
+      [config]="['name']"
+      (removeEvent)="removeWorker($event)"
+      [items]="workers"> <!--jak nie ma kolumn to trzeba dolozyc konfiga-->
 
 
     </app-datagrid>
