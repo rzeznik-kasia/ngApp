@@ -1,3 +1,11 @@
-<p>
-  search works!
-</p>
+<form #searchForm="ngForm"> <!--na tym formularzu bedziemy sluchac-->
+  <label *ngFor="let control of controls"
+  [for]="control">
+    {{control}}
+    <input type="text"
+           mgModel
+           [name]="control"
+           class="form-control">
+  </label> <!--dodane rzeczy sa niezbedne do formularza angularowego-->
+
+</form>
