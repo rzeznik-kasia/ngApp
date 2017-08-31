@@ -48,6 +48,7 @@ export class ItemsComponent implements OnInit {
       this.items = data;
     })
   }
+  /*dlaczego requesty wysylane sa przez serwer, bo:*/
 /*filtry  sa reaktywne jak na nich wywolujesz nexta to wywola sie subcribe, to sei wykona fech items, pojdzie reaquest, filtry zostana przekazane*/
   updateFilters(value) {
     console.log(value);
