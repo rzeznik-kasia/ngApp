@@ -3,6 +3,12 @@
     <app-search [filters]="filters" [controls]="['title', 'price']"></app-search>
   </div>
   <div class="col-sm-9">
+    <select (change)="updateFilters($event.target.value)">
+      <option class="form-control"
+        *ngFor="let opt of [2,5,10]">
+        {{opt}}
+      </option>
+    </select>
     <app-datagrid
       [config]="['title', 'imgSrc', 'price']"
       (removeEvent)="removeItem($event)"
