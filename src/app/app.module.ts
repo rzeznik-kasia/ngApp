@@ -9,6 +9,8 @@ import { SearchComponent } from './components/search/search.component';
 import { DatagridComponent } from './components/datagrid/datagrid.component';
 import {HttpModule} from "@angular/http";
 import { MapToIterablePipe } from './pipes/map-to-iterable.pipe';
+import { AuthComponent } from './components/auth/auth.component';
+import {AuthService} from "./services/auth.service";
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { MapToIterablePipe } from './pipes/map-to-iterable.pipe';
     RegisterFormComponent,
     SearchComponent,
     DatagridComponent,
-    MapToIterablePipe
+    MapToIterablePipe,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,9 @@ import { MapToIterablePipe } from './pipes/map-to-iterable.pipe';
 
     ])
   ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

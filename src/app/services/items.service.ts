@@ -30,6 +30,10 @@ export class ItemsService implements CRUDServiceInterface {
 
   remove(id): Observable<any> {
     return this.http
-      .delete(Settings.ITEMS_END_POINT + "/" + id);
+      //.delete(`${Settings.ITEMS_END_POINT}/{id}`);//live template
+      .delete(Settings.ITEMS_END_POINT + "/" + id); //ecma5
+
+
+
   }
 }
