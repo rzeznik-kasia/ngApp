@@ -10,9 +10,11 @@
       </option>
     </select>
 
+    <!--jak to wylicza ile kafelkow? -> -->
     <ngb-pagination
       [collectionSize]="120"
-      [(page)]="page"
+
+      [pageSize]="'10'"
       [maxSize]="5"
       [rotate]="true"
       [ellipses]="false"
