@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-datagrid',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DatagridComponent implements OnInit {
 
-  item: number[] = [
+  @Input() items: number[] = [
     1, 2, 3, 4, 5
   ];
 
