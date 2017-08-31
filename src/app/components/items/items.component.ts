@@ -13,7 +13,7 @@ import {BehaviorSubject} from "rxjs/BehaviorSubject";
 export class ItemsComponent implements OnInit {
 
   filters: BehaviorSubject<any> = new BehaviorSubject({
-    itemsPerPage: 5
+    itemsPerPage: 5 /* od tego ustawienia zalezy ile jest itemow*/
   });
 
   items: any[]; //komponent nie powinien miec zaleznosci od danych
