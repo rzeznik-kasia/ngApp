@@ -48,4 +48,10 @@ export class ItemsComponent implements OnInit {
       this.items = data;
     })
   }
+
+  updateFilters(value) {
+    console.log(value);
+    this.filters.next({...this.filters.getValue(), itemsPerPage: value});/*robije wlasciwosc i doda wartosc*/
+
+  }
 }
