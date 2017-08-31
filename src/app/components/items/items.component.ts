@@ -41,12 +41,11 @@ export class ItemsComponent implements OnInit {
           this.fetchItems();
         })
     }
-
   }
 
   private fetchItems() {
     this.itemsService.fetch(this.filters.getValue()).
-    subscribe(({data, total})=> {
+    subscribe(({data, total})=> { /*z ecma6 object enhancement*/
       this.items = data; /*to tak jak obj obj.data, obj.total*/
       this.total = total;
     })
