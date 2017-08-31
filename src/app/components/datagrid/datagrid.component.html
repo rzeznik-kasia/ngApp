@@ -13,13 +13,15 @@
           <div *ngSwitchCase="'imgSrc'">
             <img [src]="item[key]" width="50">
           </div>
+          <div *ngSwitchCase="'price'">
+            <input type="text" value={{item[key]}}>
+          </div>
           <div *ngSwitchDefault>
             {{item[key]}}
           </div>
 
         </div>
 
-        
       </td>
 
     </tr>
