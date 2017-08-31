@@ -9,6 +9,15 @@
         {{opt}}
       </option>
     </select>
+
+    <ngb-pagination
+      [collectionSize]="120"
+      [(page)]="page"
+      [maxSize]="5"
+      [rotate]="true"
+      [ellipses]="false"
+      [boundaryLinks]="true"></ngb-pagination>
+
     <app-datagrid
       [config]="['title', 'imgSrc', 'price']"
       (removeEvent)="removeItem($event)"

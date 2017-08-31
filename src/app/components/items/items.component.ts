@@ -13,7 +13,8 @@ import {BehaviorSubject} from "rxjs/BehaviorSubject";
 export class ItemsComponent implements OnInit {
 
   filters: BehaviorSubject<any> = new BehaviorSubject({
-    itemsPerPage: 5 /* od tego ustawienia zalezy ile jest itemow*/
+    itemsPerPage: 5, /* od tego ustawienia zalezy ile jest itemow*/
+    currentPage: 1
   });
 
   items: any[]; //komponent nie powinien miec zaleznosci od danych
@@ -48,6 +49,7 @@ export class ItemsComponent implements OnInit {
       this.items = data;
     })
   }
+
   /*dlaczego requesty wysylane sa przez serwer, bo:*/
 /*filtry  sa reaktywne jak na nich wywolujesz nexta to wywola sie subcribe, to sei wykona fech items, pojdzie reaquest, filtry zostana przekazane*/
   updateFilters(value) {

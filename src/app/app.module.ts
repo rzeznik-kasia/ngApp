@@ -13,6 +13,7 @@ import { AuthComponent } from './components/auth/auth.component';
 import {AuthService} from "./services/auth.service";
 import {FormsModule} from "@angular/forms";
 import {CORS} from "./utils/cors";
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {CORS} from "./utils/cors";
   imports: [
     BrowserModule,
     HttpModule,
+    NgbModule.forRoot(),
     RouterModule.forRoot([
       {path: 'items', component: ItemsComponent},
       {path: 'register-form', component: RegisterFormComponent}
