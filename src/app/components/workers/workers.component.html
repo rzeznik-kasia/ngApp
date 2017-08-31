@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-4">
+    <app-search [controls]="['name', 'phone']"><!--tu sa jakies inputy!! jakie? daj nawias kwadratowy-->
+
+
+    </app-search>
+  </div>
+  <div class="col-8">
+    <app-datagrid [config]="['name']" [items]="[{name: 'joe'}, {name: 'mike'"}]"> <!--jak nie ma kolumn to trzeba dolozyc konfiga-->
+
+
+    </app-datagrid>
+  </div>
+
+</div>
