@@ -20,7 +20,7 @@ export class WorkersComponent implements OnInit {
     this.workerService.fetch()
       .subscribe((resp) => {
       debugger;
-        this.workers = resp.json().data;
+        this.workers = resp.json().data; /*albo tu jsonem wyciagamy body abo w workers.service.ts tam trzeba jakos dodac sciezke do tego endpointa*/
       })
   }
 
