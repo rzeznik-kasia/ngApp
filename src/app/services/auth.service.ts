@@ -7,12 +7,23 @@ import {Settings} from "../utils/ssettings";
 export class AuthService implements AuthServiceInterface{
 
   access: boolean = false;
-  constructor(private http:Http) { }
+  constructor(private http:Http) {
+    this.isAuthenticated();
+  }
 
   isAuthenticated(): void {
+    /*request do zerwera sprawdzajacy czy rserwer ma sesje*/
+    this.http.get(Settings.AUTH)
+      .subscribe((data)=> {
+        debugger
+      });
   }
 
   logIn(loginData): void {
+    /*pierwsyz sposob na przeslanie ciasteczka
+    * const opts: RequestOptions = new RequestOptions() // z angular http
+    * opts.withCredentioals = true;*/
+
     this.http.post(Settings.LOGIN_END_POINT, loginData)
       .map((resp)=> {
         return resp.json().ok;

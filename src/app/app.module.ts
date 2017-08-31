@@ -7,11 +7,12 @@ import { RegisterFormComponent } from './components/register-form/register-form.
 import {RouterModule} from "@angular/router";
 import { SearchComponent } from './components/search/search.component';
 import { DatagridComponent } from './components/datagrid/datagrid.component';
-import {HttpModule} from "@angular/http";
+import {BrowserXhr, HttpModule} from "@angular/http";
 import { MapToIterablePipe } from './pipes/map-to-iterable.pipe';
 import { AuthComponent } from './components/auth/auth.component';
 import {AuthService} from "./services/auth.service";
 import {FormsModule} from "@angular/forms";
+import {CORS} from "./utils/cors";
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {FormsModule} from "@angular/forms";
     FormsModule
   ],
   providers: [
-    AuthService
+    AuthService,
+    {provide: BrowserXhr, useClass: CORS}
   ],
   bootstrap: [AppComponent]
 })
