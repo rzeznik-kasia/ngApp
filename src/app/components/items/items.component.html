@@ -11,14 +11,15 @@
     </select>
 
     <!--jak to wylicza ile kafelkow? -> -->
-    <ngb-pagination
-      [collectionSize]="120"
 
-      [pageSize]="'10'"
-      [maxSize]="5"
+    iii: {{total/filters.getValue().itemsPerPage}}
+    <!--    <ngb-pagination
+      [collectionSize]="total"
+      [pageSize]="filters.value.itemsPerPage"
+      [maxSize]="50"
       [rotate]="true"
       [ellipses]="false"
-      [boundaryLinks]="true"></ngb-pagination>
+      [boundaryLinks]="true"></ngb-pagination>-->
 
     <app-datagrid
       [config]="['title', 'imgSrc', 'price']"

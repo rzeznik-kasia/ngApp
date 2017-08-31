@@ -20,7 +20,7 @@ export class ItemsService implements CRUDServiceInterface {
     //.get(Settings.ITEMS_END_POINT + "?title=" + filters.title)
       .get(Settings.ITEMS_END_POINT, reqOpts)/*z anularem tak wyglada*/
       .map((response)=> { // wzorzec obserwer, rejestrujesz funkcje i jest wolana keidy trzeba, mozna mapowac obiekty -> cyzt. reactivex
-        return response.json().data;
+        return response.json();
       });
   }
 

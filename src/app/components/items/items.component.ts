@@ -18,6 +18,7 @@ export class ItemsComponent implements OnInit {
   });
 
   items: any[]; //komponent nie powinien miec zaleznosci od danych
+  total: number;
 
   constructor(private itemsService: ItemsService) {
     this.filters
@@ -45,8 +46,9 @@ export class ItemsComponent implements OnInit {
 
   private fetchItems() {
     this.itemsService.fetch(this.filters.getValue()).
-    subscribe((data)=> {
-      this.items = data;
+    subscribe(({data, total})=> {
+      this.items = data; /*to tak jak obj obj.data, obj.total*/
+      this.total = total;
     })
   }
 
