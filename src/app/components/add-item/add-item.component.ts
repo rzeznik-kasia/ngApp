@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-add-item',
@@ -8,12 +9,20 @@ import {Component, Input, OnInit} from '@angular/core';
 export class AddItemComponent implements OnInit {
 
   @Input() newItem: any; //to jest ta komorka ktoa przezkazujemy dziecku //@Input newItem: Subject<any>
-  constructor() { }
+  constructor(private modalSErvice:NgbModal) { /*zeby mozna bylo otworzyc okno modalne*/
+
+
+  }
 
   ngOnInit() {
   }
 
   onClick() {
     this.newItem.next(Date.now());
+  }
+
+  openModal(content) { /*nocntent musizmy z funkcji odebrac*/
+
+    this.modalSErvice.open(content);
   }
 }
