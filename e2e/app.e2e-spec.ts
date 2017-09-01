@@ -1,14 +1,8 @@
-import { AppPage } from './app.po';
+import {browser} from "protractor";
 
-describe('ng-app App', () => {
-  let page: AppPage;
-
-  beforeEach(() => {
-    page = new AppPage();
-  });
-
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+describe('items view', ()=> {
+  it('should open items view', ()=> {
+    browser.get('items');
+    browser.sleep(5000);
   });
 });

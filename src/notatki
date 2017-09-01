@@ -23,3 +23,22 @@ C:\Users\CSComarch\WebstormProjects\ngApp\dist>http-server -o -a localhost -p 80
 
 jestli nie mamy http-server
 npm istall http-server -g
+
+
+.. e2e wszsytko idzie do serwera, mozna ustawic specjalna baze do testow jak cos - e2e symuluje uzytkownika koncowego, webdriver klika w aplikacji
+jednostowe strasznie duzo czasu zajmuja
+
+zeby nie
+selenium > protaktor jako nakladka na selenium (daje asynchronicznosc) i robimy testy na protaktora > angular (ale wyrzucamy angulara, bo angular narzuca nam port, a api nam narzuca port)
+
+npm run e2e - jak sie odpali przegladarka to sukces
+
+protractor.conf.js -> dac port 8000 w 16 lini   baseUrl: 'http://localhost:8000/',
+    "e2e": "protractor"
+
+w takich plikach beda szukane testy w protractor.conf.js
+  specs: [
+    './e2e/**/*.e2e-spec.ts'
+  ],
+
+
