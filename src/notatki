@@ -42,3 +42,9 @@ w takich plikach beda szukane testy w protractor.conf.js
   ],
 
 
+..
+w jednostowych nie komunikujemy sie z api
+
+
+
+test.ts
