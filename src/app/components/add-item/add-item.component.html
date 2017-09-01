@@ -1,5 +1,71 @@
 <ng-template #content>
-  <h1>welcome!</h1>
+
+
+
+<!--
+  <div class="modal-header">
+    add item
+  </div>
+  <div class="modal-body">
+    item: {{item}}
+    <form>
+      <input type="text"
+             ng-model="item.title"
+             placeholder="title"
+             class="form-control">
+      <input type="text"
+             ng-model="item.description"
+             placeholder="description"
+             class="form-control">
+      <input type="text"
+             ng-model="item.price"
+             placeholder="price"
+             class="form-control">
+      <select ng-model="item.category" class="form-control">
+        <option value="food">food</option>
+        <option value="clothes">clothes</option>
+      </select>
+      <button ng-click="ok(item)">ok</button>
+    </form>
+  </div>
+  <div class="modal-footer">
+    fooot
+  </div>-->
+  <div class="modal-header" >
+    add item
+  </div>
+  <div class="modal-body">
+    <form>
+      <input type="text"
+             ngModel
+             name="title"
+             placeholder="title"
+             class="form-control">
+      <input type="text"
+             ngModel
+             name="description"
+             placeholder="description"
+             class="form-control">
+      <input type="text"
+             ngModel
+             name="price"
+             placeholder="price"
+             class="form-control">
+      <select ngModel name="category" class="form-control">
+        <option value="food">food</option>
+        <option value="clothes">clothes</option>
+      </select>
+      <button (click)="onClick()">ok</button> <!--tu musimy przekazac formularz ktorego jeszcze nie ma-->
+    </form>
+  </div>
+  <div class="modal-footer">
+    foot
+  </div>
+
+
+
+
+
 </ng-template>
 
 <button (click)="openModal(content)">add</button> <!--klikniecie w przyciks spowoduje wywolanie subsriba w parencie, items component dodaje loga--> <!--przekazujemy content bez hasha-->

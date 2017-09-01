@@ -9,7 +9,7 @@ import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 export class AddItemComponent implements OnInit {
 
   @Input() newItem: any; //to jest ta komorka ktoa przezkazujemy dziecku //@Input newItem: Subject<any>
-  constructor(private modalSErvice:NgbModal) { /*zeby mozna bylo otworzyc okno modalne*/
+  constructor(private modalService:NgbModal) { /*zeby mozna bylo otworzyc okno modalne*/
 
 
   }
@@ -23,6 +23,6 @@ export class AddItemComponent implements OnInit {
 
   openModal(content) { /*nocntent musizmy z funkcji odebrac*/
 
-    this.modalSErvice.open(content);
+    this.modalService.open(content);
   }
 }
