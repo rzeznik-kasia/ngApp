@@ -6,4 +6,9 @@
 
 <form [formGroup]="registerForm">
   <input type="text" formControlName="name">
+  <br>
+  <input type="date" formControlName="birthDate">
+  <div class="badge badge-danger">
+    {{registerForm.get('birthDate')?.errors|json}}
+  </div>
 </form>
