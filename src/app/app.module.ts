@@ -16,7 +16,7 @@ import {CORS} from "./utils/cors";
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { WorkersComponent } from './components/workers/workers.component';
 import { AddItemComponent } from './components/add-item/add-item.component';
-import {MyDirectivesModule} from "./modules/my-directives/my-directives.module";
+
 
 const lazyLoadingModulePath = 'app/modules/my-directives/my-directives.module#MyDirectivesModule';
 
@@ -35,7 +35,6 @@ const lazyLoadingModulePath = 'app/modules/my-directives/my-directives.module#My
   imports: [
     BrowserModule, /*moduly zawsze podlaczamy do importu*/
     HttpModule,
-    MyDirectivesModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
       {path: 'items', component: ItemsComponent},
