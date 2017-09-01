@@ -44,17 +44,38 @@
              ngModel
              name="title"
              placeholder="title"
-             class="form-control">
+             required
+             class="form-control"> <!--zeby byla walidacja musi byc required-->
+      <div class="badge badge-danger">
+        {{newItemForm.controls['title']?.errors|json}} <!--to wyswietli nam blad--><!--formularz powstaje z opoznieniem a my juz sie odwolujemy-->
+      </div> <!--za chwile zrobimy walidacje po stronie serwera-->
       <input type="text"
              ngModel
              name="description"
+             required
+             minlength="5"
              placeholder="description"
              class="form-control">
+      <div class="badge badge-danger"
+           *ngIf="newItemForm.controls['description']?.errors">
+              pole wymagane <!--to wyswietli nam blad--><!--formularz powstaje z opoznieniem a my juz sie odwolujemy-->
+      </div>
       <input type="text"
              ngModel
              name="price"
+             required
+             minlength="2"
              placeholder="price"
              class="form-control">
+      <div class="badge badge-danger"
+            *ngIf="newItemForm.controls['price']?.hasError('required')"> <!--lepiej zeby miec komponent ktory zrobi fora  po errorach i je wylistuje, tu jest za duzo kodu-->
+             pole wymagane dla pricea<!--to wyswietli nam blad--><!--formularz powstaje z opoznieniem a my juz sie odwolujemy-->
+      </div>
+      <div class="badge badge-danger"
+           *ngIf="newItemForm.controls['price']?.hasError('minlength')">
+            za krotko<!--to wyswietli nam blad--><!--formularz powstaje z opoznieniem a my juz sie odwolujemy-->
+      </div>
+
       <select ngModel name="category" class="form-control">
         <option value="food">food</option>
         <option value="clothes">clothes</option>
