@@ -18,6 +18,8 @@ import { WorkersComponent } from './components/workers/workers.component';
 import { AddItemComponent } from './components/add-item/add-item.component';
 import {MyDirectivesModule} from "./modules/my-directives/my-directives.module";
 
+const lazyLoadingModulePath = 'app/modules/my-directives/my-directives.module#MyDirectivesModule';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +40,8 @@ import {MyDirectivesModule} from "./modules/my-directives/my-directives.module";
     RouterModule.forRoot([
       {path: 'items', component: ItemsComponent},
       {path: 'register-form', component: RegisterFormComponent},
-      {path: 'workers', component: WorkersComponent}
+      {path: 'workers', component: WorkersComponent},
+      {path: 'lazy', loadChildren: lazyLoadingModulePath}
 
     ]),
     FormsModule
