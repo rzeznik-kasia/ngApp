@@ -36,7 +36,7 @@ export class ItemsComponent implements OnInit {
           .add(data) /* postem a items przekazujemy w drugim parametrze*/
           .subscribe(
             (data) => {
-              console.log(data);
+              this.fetchItems();
               /*   jako zmienna, przekazujemy ja do modala
               * czy mozna okno modalne podac przez nexta? ale raczej nie przekazujemy calego obiektu, zeby go zamknac */
             },
