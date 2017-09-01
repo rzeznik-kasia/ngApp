@@ -37,6 +37,8 @@ export class ItemsComponent implements OnInit {
           .subscribe(
             (data) => {
               console.log(data);
+              /*   jako zmienna, przekazujemy ja do modala
+              * czy mozna okno modalne podac przez nexta? ale raczej nie przekazujemy calego obiektu, zeby go zamknac */
             },
             (err) => {
               console.warn(err);

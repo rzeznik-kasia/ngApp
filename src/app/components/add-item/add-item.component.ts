@@ -10,6 +10,7 @@ import {NgForm} from "@angular/forms";
 export class AddItemComponent implements OnInit {
 
   @Input() newItem: any; //to jest ta komorka ktoa przezkazujemy dziecku //@Input newItem: Subject<any>
+  myModal;
   constructor(private modalService:NgbModal) { /*zeby mozna bylo otworzyc okno modalne*/
 
 
@@ -19,11 +20,13 @@ export class AddItemComponent implements OnInit {
   }
 
   onClick(newItemForm: NgForm) {
-    this.newItem.next(newItemForm.value); /*sa dwa sposoby na dostep do rzeczy ktore sa w templatce z klasy, albo przez view childa albo przekazujemy do funkcji przez parametr */
+    if(newItemForm.valid) {
+      this.newItem.next(newItemForm.value); /*sa dwa sposoby na dostep do rzeczy ktore sa w templatce z klasy, albo przez view childa albo przekazujemy do funkcji przez parametr */
+      this.myModal.close(); /*werjsa light*/
+    }
   }
 
   openModal(content) { /*nocntent musizmy z funkcji odebrac*/
-
-    this.modalService.open(content);
+    this.myModal = this.modalService.open(content); /**/
   }
 }
