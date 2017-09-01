@@ -5,16 +5,16 @@
 </div>
 
 <form [formGroup]="registerForm">
-  <input type="text" formControlName="name">
-  <br>
+  <div class="form-group"><input type="text" formControlName="name"></div>
 
-  <input type="date" formControlName="birthDate">
+
+<div class="form-control">  <input type="date" formControlName="birthDate"></div> <!--ctrl alt t - soruuound with tag-->
   <div class="badge badge-danger">
     {{registerForm.get('birthDate')?.errors|json}}
   </div>
 
-  <br>
-  <input type="text" formControlName="pesel">
+  <div class="form-control">
+  <input type="text" formControlName="pesel"></div>
   <div class="badge badge-danger">
     {{registerForm.get('pesel')?.errors|json}}
   </div>
