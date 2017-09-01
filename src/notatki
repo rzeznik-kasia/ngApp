@@ -11,3 +11,15 @@ ng g s services/items
 
 ..
 ng g p pipes/map-to-iterable
+
+..
+ng build --env-prod
+ng build --env=prod //wersja min
+bledy beda np. jesli uzyjemy private dla templatki np.
+
+
+..
+C:\Users\CSComarch\WebstormProjects\ngApp\dist>http-server -o -a localhost -p 8000
+
+jestli nie mamy http-server
+npm istall http-server -g
