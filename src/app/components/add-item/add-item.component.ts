@@ -7,13 +7,13 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class AddItemComponent implements OnInit {
 
-  @Input() subject: any;
+  @Input() newItem: any; //to jest ta komorka ktoa przezkazujemy dziecku //@Input newItem: Subject<any>
   constructor() { }
 
   ngOnInit() {
   }
 
-  addItem() {
-    this.subject.next(Date.now());
+  onClick() {
+    this.newItem.next(Date.now());
   }
 }

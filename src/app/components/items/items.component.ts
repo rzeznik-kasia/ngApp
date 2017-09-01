@@ -21,7 +21,7 @@ export class ItemsComponent implements OnInit {
   items: any[]; //komponent nie powinien miec zaleznosci od danych
   total: number;
 
-  newItem: Subject<any> = new Subject(); //tworzymy obiekt w parencie na ktorym nasluchujemy zdarzenia
+  newItem: Subject<any> = new Subject(); //tworzymy obiekt w parencie na ktorym nasluchujemy zdarzenia // rozni sie tym ze nie ma wartosci domyslej
 
   constructor(private itemsService: ItemsService) {
     this.filters
@@ -32,7 +32,7 @@ export class ItemsComponent implements OnInit {
 
     this.newItem
       .subscribe((data) => { //nasluchiwanie az ktos da nexta i wyswietl dane
-      console.log(data);
+      console.log(data); // tu bedziemy wysylac requetst
     })
   }
 
