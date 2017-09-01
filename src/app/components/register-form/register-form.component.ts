@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {CustorValidators} from "../../utils/custom-validators";
+import {CustomValidators} from "../../utils/custom-validators";
 
 @Component({
   selector: 'app-register-form',
@@ -14,7 +14,7 @@ export class RegisterFormComponent implements OnInit {
   constructor() {
     this.registerForm = new FormGroup({
       name: new FormControl('', Validators.required), //wyswietla sie joe w polu
-      birthDate: new FormControl('', CustorValidators.passedDateRequired)
+      birthDate: new FormControl('', CustomValidators.passedDateRequired)
     })
   }
 
