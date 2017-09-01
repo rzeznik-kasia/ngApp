@@ -35,7 +35,11 @@
     add item
   </div>
   <div class="modal-body">
-    <form>
+    <div class="alert alert-success">
+      form: {{newItemForm.value|json}}
+    </div>
+
+    <form #newItemForm="ngForm">
       <input type="text"
              ngModel
              name="title"
@@ -55,7 +59,7 @@
         <option value="food">food</option>
         <option value="clothes">clothes</option>
       </select>
-      <button (click)="onClick()">ok</button> <!--tu musimy przekazac formularz ktorego jeszcze nie ma-->
+      <button (click)="onClick(newItemForm)">ok</button> <!--tu musimy przekazac formularz ktorego jeszcze nie ma-->
     </form>
   </div>
   <div class="modal-footer">

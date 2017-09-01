@@ -17,8 +17,8 @@ export class AddItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  onClick() {
-    this.newItem.next(Date.now());
+  onClick(newItemForm) {
+    this.newItem.next(newItemForm.value);
   }
 
   openModal(content) { /*nocntent musizmy z funkcji odebrac*/
