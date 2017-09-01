@@ -25,7 +25,7 @@ getTestBed().initTestEnvironment(
   platformBrowserDynamicTesting()
 );
 // Then we find all the tests.
-const context = require.context('./', true, /map-to-iterable.pipe.spec\.ts$/);
+const context = require.context('./', true, /datagrid.component.spec\.ts$/);
 // And load the modules.
 context.keys().map(context);
 // Finally, start Karma to run the tests.
