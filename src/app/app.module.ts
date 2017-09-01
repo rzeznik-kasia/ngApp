@@ -11,12 +11,11 @@ import {BrowserXhr, HttpModule} from "@angular/http";
 import { MapToIterablePipe } from './pipes/map-to-iterable.pipe';
 import { AuthComponent } from './components/auth/auth.component';
 import {AuthService} from "./services/auth.service";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CORS} from "./utils/cors";
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { WorkersComponent } from './components/workers/workers.component';
 import { AddItemComponent } from './components/add-item/add-item.component';
-
 
 const lazyLoadingModulePath = 'app/modules/my-directives/my-directives.module#MyDirectivesModule';
 
@@ -36,6 +35,7 @@ const lazyLoadingModulePath = 'app/modules/my-directives/my-directives.module#My
     BrowserModule, /*moduly zawsze podlaczamy do importu*/
     HttpModule,
     NgbModule.forRoot(),
+    ReactiveFormsModule,
     RouterModule.forRoot([
       {path: 'items', component: ItemsComponent},
       {path: 'register-form', component: RegisterFormComponent},
