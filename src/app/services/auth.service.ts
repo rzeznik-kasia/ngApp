@@ -15,6 +15,7 @@ export class AuthService implements AuthServiceInterface{
     /*request do zerwera sprawdzajacy czy rserwer ma sesje*/
     this.http.get(Settings.AUTH)
       .subscribe((data)=> {
+        this.access = data.json().ok;
       });
   }
 
