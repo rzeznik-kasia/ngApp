@@ -55,7 +55,7 @@ describe('datagrid component', ()=> {
 
     const el1Body = rows[0];
     console.log(el1Body.queryAll(By.css('td')));
-    //
+    // serwisy sie trudno testuje, bo sie responsy mockuje.  funkcje komponentu sie prosto testuje
 
 
 
