@@ -25,6 +25,22 @@ describe('items view', ()=> {
     expect(btnAddItem.isPresent()).toBeTruthy(); //normalnie kazdy z tych elementow powinien byc w osobnym itcie
   });
 
+  describe('when add itembtn clicked, ', ()=> {
+    //dobra praktyka odswiezyc widok
+
+    const addItemForm = element(By.id('newItemForm'));
+
+    beforeAll(()=> {
+      browser.get('items')
+      btnAddItem.click();
+
+    })
+
+    it('should display fields', ()=> {
+      expect(addItemForm.isPresent()).toBeTruthy();
+    });
+  })
+
 
 
 });
