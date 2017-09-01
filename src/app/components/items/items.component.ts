@@ -30,7 +30,8 @@ export class ItemsComponent implements OnInit {
         /*!!!!! to bylo wazne*/
       });
 
-    this.newItem.subscribe((data) => { //nasluchiwanie az ktos da nexta i wyswietl dane
+    this.newItem
+      .subscribe((data) => { //nasluchiwanie az ktos da nexta i wyswietl dane
       console.log(data);
     })
   }

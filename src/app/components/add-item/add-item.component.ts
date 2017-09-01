@@ -14,6 +14,6 @@ export class AddItemComponent implements OnInit {
   }
 
   addItem() {
-    this.subject.next();
+    this.subject.next(Date.now());
   }
 }
