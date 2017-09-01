@@ -14,7 +14,11 @@ export class RegisterFormComponent implements OnInit {
   constructor() {
     this.registerForm = new FormGroup({
       name: new FormControl('', Validators.required), //wyswietla sie joe w polu
-      birthDate: new FormControl('', CustomValidators.passedDateRequired)
+      birthDate: new FormControl('', Validators.compose([
+        Validators.required,
+        CustomValidators.passedDateRequired
+      ])),
+      pesel: new FormControl('', Validators.pattern(/^\d{11}$/))
     })
   }
 

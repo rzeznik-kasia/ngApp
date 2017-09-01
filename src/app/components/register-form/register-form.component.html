@@ -7,8 +7,17 @@
 <form [formGroup]="registerForm">
   <input type="text" formControlName="name">
   <br>
+
   <input type="date" formControlName="birthDate">
   <div class="badge badge-danger">
     {{registerForm.get('birthDate')?.errors|json}}
   </div>
+
+  <br>
+  <input type="text" formControlName="pesel">
+  <div class="badge badge-danger">
+    {{registerForm.get('pesel')?.errors|json}}
+  </div>
+
+
 </form>
