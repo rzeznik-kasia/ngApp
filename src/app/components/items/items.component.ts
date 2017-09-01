@@ -32,8 +32,17 @@ export class ItemsComponent implements OnInit {
 
     this.newItem
       .subscribe((data) => { //nasluchiwanie az ktos da nexta i wyswietl dane
-      console.log(data); // tu bedziemy wysylac requetst
-    })
+        this.itemsService
+          .add(data) /* postem a items przekazujemy w drugim parametrze*/
+          .subscribe(
+            (data) => {
+              console.log(data);
+            },
+            (err) => {
+              console.warn(err);
+            }
+          )
+      })
   }
 
   //przy uzyciu http widok widzi z jakiego adresu przychodza dane, zle jak tak jest

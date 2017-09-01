@@ -15,7 +15,7 @@ export class ItemsService implements CRUDServiceInterface {
   fetch(filters?: any): Observable<any> {
     const reqOpts: RequestOptions = new RequestOptions();
     reqOpts.params = filters;
-    console.log("dochodza" +  filters);
+
     return this.http
     //.get(Settings.ITEMS_END_POINT + "?title=" + filters.title)
       .get(Settings.ITEMS_END_POINT, reqOpts)/*z anularem tak wyglada*/
@@ -25,7 +25,7 @@ export class ItemsService implements CRUDServiceInterface {
   }
 
   add(item): Observable<any> {
-    return null;
+    return this.http.post(Settings.ITEMS_END_POINT, item);
   }
 
   update(item): Observable<any> {
