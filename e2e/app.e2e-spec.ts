@@ -9,6 +9,7 @@ describe('items view', ()=> {
   const search = element(By.tagName('app-search'));
   const btnAddItem = element(By.buttonText('add'));
 
+
   beforeAll(()=> {
     browser.get('items')
     btnLogIn.click();
@@ -17,7 +18,7 @@ describe('items view', ()=> {
 
   it('should open items view', ()=> {
     browser.get('items');
-    browser.sleep(5000); /*tu nic nie sprawdzamy */
+    browser.sleep(2000); /*tu nic nie sprawdzamy */
   });
 
   it('should display elements', ()=> {
@@ -36,6 +37,8 @@ describe('items view', ()=> {
   const priceField = addItemForm.element(By.name('price'));
   const categoryField = addItemForm.element(By.name('category'));
     const uniqueTitle = "Kasia" + Date.now();
+    const btnSend = addItemForm.element(By.buttonText('ok'));
+
 
     beforeAll(()=> {
       browser.get('items')
@@ -43,13 +46,25 @@ describe('items view', ()=> {
 
     })
 
-    it('should display fields', ()=> {
+    it('should add item and remove it', ()=> {
       expect(addItemForm.isPresent()).toBeTruthy();
       nameField.sendKeys(uniqueTitle);
       descriptionField.sendKeys('any mesage...');
       priceField.sendKeys('9292');
-
       categoryField.element(By.cssContainingText('option', 'food')).click(); //wybieranie food
+
+      btnSend.click();
+
+      search.element(By.id('title')).sendKeys(uniqueTitle);
+      const items = datagrid.all(By.css('tbody tr'));
+      items.count().then((value)=> {
+        console.log(value); // wyswietlilo sie ze znalazl 1
+      });
+      expect(items.count()).toBe(1);
+
+      datagrid.element(By.buttonText('delete')).click(); //klikamy delete
+      browser.switchTo().alert().accept();
+      expect(items.count()).toBe(0); //po usunieciu elementow powinno byc 0
 
       browser.sleep(5000);
     });
