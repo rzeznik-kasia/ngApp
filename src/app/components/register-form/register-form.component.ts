@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {CustorValidators} from "../../utils/custor-validators";
+import {CustorValidators} from "../../utils/custom-validators";
 
 @Component({
   selector: 'app-register-form',
