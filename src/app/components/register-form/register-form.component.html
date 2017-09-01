@@ -1,3 +1,9 @@
+<div class="alert alert-info">
+  {{registerForm.value|json}}
+  <br>
+  {{registerForm.valid}}
+</div>
+
 <form [formGroup]="registerForm">
   <input type="text" formControlName="name">
 </form>
