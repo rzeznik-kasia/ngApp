@@ -1,4 +1,6 @@
 import {browser, By, element} from "protractor";
+import {until} from "selenium-webdriver";
+import titleContains = until.titleContains;
 
 describe('items view', ()=> {
 
@@ -29,6 +31,11 @@ describe('items view', ()=> {
     //dobra praktyka odswiezyc widok
 
     const addItemForm = element(By.id('newItemForm'));
+  const nameField = addItemForm.element(By.name('title'));
+  const descriptionField = addItemForm.element(By.name('description'));
+  const priceField = addItemForm.element(By.name('price'));
+  const categoryField = addItemForm.element(By.name('category'));
+    const uniqueTitle = "Kasia" + Date.now();
 
     beforeAll(()=> {
       browser.get('items')
@@ -38,6 +45,13 @@ describe('items view', ()=> {
 
     it('should display fields', ()=> {
       expect(addItemForm.isPresent()).toBeTruthy();
+      nameField.sendKeys(uniqueTitle);
+      descriptionField.sendKeys('any mesage...');
+      priceField.sendKeys('9292');
+
+      categoryField.element(By.cssContainingText('option', 'food')).click(); //wybieranie food
+
+      browser.sleep(5000);
     });
   })
 
