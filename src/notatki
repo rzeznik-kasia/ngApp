@@ -50,3 +50,6 @@ w jednostowych nie komunikujemy sie z api
 test.ts
 ..
 mozna testowac routing
+
+.. chyunk plik javascriptowy ktory zawiera caly modul, z templatka ze wszstykim, wszytko pobrane jest na rzadanie . pobarny jest caly modul
+laczenie z komponentami.
