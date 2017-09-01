@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-add-item',
@@ -17,8 +18,8 @@ export class AddItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  onClick(newItemForm) {
-    this.newItem.next(newItemForm.value);
+  onClick(newItemForm: NgForm) {
+    this.newItem.next(newItemForm.value); /*sa dwa sposoby na dostep do rzeczy ktore sa w templatce z klasy, albo przez view childa albo przekazujemy do funkcji przez parametr */
   }
 
   openModal(content) { /*nocntent musizmy z funkcji odebrac*/

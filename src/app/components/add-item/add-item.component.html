@@ -39,7 +39,7 @@
       form: {{newItemForm.value|json}}
     </div>
 
-    <form #newItemForm="ngForm">
+    <form #newItemForm="ngForm"> <!--jezeli chcesz zeby to byl formularz angularowy i tworzyl obiekt z dnaymi formularza robisz to wlasnie tak, obiekt typu ngForm o nazwie newItemForm, to jest z angulara jedynki wiec troch einaczej-->
       <input type="text"
              ngModel
              name="title"
