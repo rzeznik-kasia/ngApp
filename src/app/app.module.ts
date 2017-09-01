@@ -15,6 +15,7 @@ import {FormsModule} from "@angular/forms";
 import {CORS} from "./utils/cors";
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { WorkersComponent } from './components/workers/workers.component';
+import { AddItemComponent } from './components/add-item/add-item.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { WorkersComponent } from './components/workers/workers.component';
     DatagridComponent,
     MapToIterablePipe,
     AuthComponent,
-    WorkersComponent
+    WorkersComponent,
+    AddItemComponent
   ],
   imports: [
     BrowserModule,
